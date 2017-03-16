@@ -15,16 +15,7 @@ export default {
         new webpack.optimize.OccurrenceOrderPlugin()
     ],
     devtool: 'cheap-source-map',
-    devServer: {
-        hot: true,
-        // enable HMR on the server
 
-        contentBase: path.join(__dirname, '/'),
-        // match the output path
-
-        publicPath: '/'
-        // match the output `publicPath`
-    },
     module: {
         loaders: [
             {
