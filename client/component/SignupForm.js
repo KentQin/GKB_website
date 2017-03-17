@@ -44,7 +44,10 @@ export default class SignupForm extends React.Component {
 
                     //this.context.router.push('/')
                 },
-                (err) => this.setState({ errors: err.response.data })
+                (err) => {
+                  this.setState({ errors: err.response.data })
+                  console.log("error here");
+                }
             );
         }
     }
@@ -65,17 +68,7 @@ export default class SignupForm extends React.Component {
             <form onSubmit={this.onSubmit.bind(this)}>
                 <h1>Sign up</h1>
 
-                {/*<div className={classnames("form-group", {'has-error': errors.username})}>*/}
-                    {/*<label htmlFor="" className="control-label">Username</label>*/}
-                    {/*<input*/}
-                        {/*value={this.state.username}*/}
-                        {/*onChange={this.onChange.bind(this)}*/}
-                        {/*type="text"*/}
-                        {/*name="username"*/}
-                        {/*className="form-control"*/}
-                    {/*/>*/}
-                    {/*{errors.username && <span className="help-block">{errors.username}</span>}*/}
-                {/*</div>*/}
+
 
                 <TextFieldGroup
                     error={errors.username}
@@ -85,18 +78,6 @@ export default class SignupForm extends React.Component {
                     field="username"
                 />
 
-                {/*<div className={classnames("form-group", {'has-error': errors.email})}>*/}
-                    {/*<label htmlFor="" className="control-label">email</label>*/}
-                    {/*<input*/}
-                        {/*value={this.state.email}*/}
-                        {/*onChange={this.onChange.bind(this)}*/}
-                        {/*type="text"*/}
-                        {/*name="email"*/}
-                        {/*className="form-control"*/}
-                    {/*/>*/}
-                    {/*{errors.email && <span className="help-block">{errors.email}</span>}*/}
-                {/*</div>*/}
-
                 <TextFieldGroup
                     error={errors.email}
                     label="Email"
@@ -104,18 +85,6 @@ export default class SignupForm extends React.Component {
                     value={this.state.email}
                     field="email"
                 />
-
-                {/*<div className={classnames("form-group", {'has-error': errors.password})}>*/}
-                    {/*<label htmlFor="" className="control-label">password</label>*/}
-                    {/*<input*/}
-                        {/*value={this.state.password}*/}
-                        {/*onChange={this.onChange.bind(this)}*/}
-                        {/*type="password"*/}
-                        {/*name="password"*/}
-                        {/*className="form-control"*/}
-                    {/*/>*/}
-                    {/*{errors.password && <span className="help-block">{errors.password}</span>}*/}
-                {/*</div>*/}
 
                 <TextFieldGroup
                     error={errors.password}
@@ -125,18 +94,6 @@ export default class SignupForm extends React.Component {
                     field="password"
                     type="password"
                 />
-
-                {/*<div className={classnames("form-group", {'has-error': errors.passwordConfirmation})}>*/}
-                    {/*<label htmlFor="" className="control-label">passwordConfirmation</label>*/}
-                    {/*<input*/}
-                        {/*value={this.state.passwordConfirmation}*/}
-                        {/*onChange={this.onChange.bind(this)}*/}
-                        {/*type="password"*/}
-                        {/*name="passwordConfirmation"*/}
-                        {/*className="form-control"*/}
-                    {/*/>*/}
-                    {/*{errors.passwordConfirmation && <span className="help-block">{errors.passwordConfirmation}</span>}*/}
-                {/*</div>*/}
 
                 <TextFieldGroup
                     error={errors.passwordConfirmation}
