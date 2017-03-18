@@ -21,7 +21,9 @@ router.post('/', (req, res) => {
         var temp = {
           username: username,
           email: email,
-          password: password
+          password: password,
+          provide: "local",
+          facebook: null
         };
         console.log("temp: " + temp);
         User.create(temp, function(err, data) {
